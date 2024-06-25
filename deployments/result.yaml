@@ -6,7 +6,7 @@ metadata:
   name: result
   namespace: vote
 spec:
-  replica: 1
+  replicas: 1
   selector:
     matchLabels:
       app: result
@@ -16,8 +16,8 @@ spec:
         app: result
     spec:
       containers: 
-      - image: dockersamples/examplevotingapp_result:before
+      - image: kodekloud/examplevotingapp_result:v1
         name: result
         ports: 
-        - containerPorts: 80
+        - containerPort: 80
           name: result
